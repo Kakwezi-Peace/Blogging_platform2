@@ -23,9 +23,6 @@ public class User {
     @jakarta.validation.constraints.NotBlank(message = "Password is required")
     private String password;
 
-    private String role; // USER or ADMIN
-
-
-
+    private String role;
 
 }
