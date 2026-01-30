@@ -1,4 +1,4 @@
-package graphqlcontroller;
+package com.example.Blogging_platform2.graphqlcontroller;
 
 import com.example.Blogging_platform2.model.Tag;
 import com.example.Blogging_platform2.service.TagService;
@@ -34,7 +34,7 @@ public class TagGraphQLController {
         tag.setName(name);
         return service.createTag(tag);
     }
-
+// mutation mapping
     @MutationMapping
     public boolean deleteTag(@Argument int tagId) {
         return service.deleteTag(tagId);
