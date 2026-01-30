@@ -1,6 +1,6 @@
-Blogging Platform (Spring Boot + GraphQL + REST)
+### Blogging Platform (Spring Boot + GraphQL + REST)
 
- Overview
+## Overview
 This project is a Java Spring Boot blogging platform that supports both REST APIs and GraphQL endpoints.
 It allows users to:
 
@@ -14,7 +14,7 @@ Search posts by title or content
 
  GraphQL queries/mutations for flexible data access
 
- Tech Stack
+ ## Tech Stack
 Java 21
 
 Spring Boot
@@ -27,7 +27,7 @@ Maven for dependency management
 
 Swagger/OpenAPI for API documentation
 
-📂 Project Structure
+## Project Structure
 Code
 src/main/java/com/example/Blogging_platform2/
 │
@@ -37,7 +37,8 @@ src/main/java/com/example/Blogging_platform2/
 ├── model/             # Entity models (Post, Comment, Review, Tag, PostView, ActivityLog)
 ├── repository/        # JDBC repositories
 └── service/           # Business logic services
-🔑 Key Features
+
+## Key Features
 Posts: CRUD operations with ownership checks
 
 Comments: Linked to posts, created/deleted via GraphQL/REST
@@ -54,7 +55,8 @@ Search: Simple text search on title/content
 
 GraphQL Schema: Queries and mutations for all entities
 
- Running the Project
+
+ ## Running the Project
 Clone the repository:
 
 bash
@@ -62,7 +64,7 @@ git clone https://github.com/your-username/blogging-platform.git
 cd blogging-platform
 Configure your database in application.properties:
 
-properties
+## properties
 spring.datasource.url=jdbc:postgresql://localhost:5432/blogdb
 spring.datasource.username=youruser
 spring.datasource.password=yourpassword
@@ -79,7 +81,7 @@ Swagger UI → http://localhost:8080/swagger-ui.html
 GraphQL → http://localhost:8080/graphql
 
 
- Example GraphQL Queries/Mutations
+ ## Example GraphQL Queries/Mutations
 Get Post by ID
 graphql
 query {
@@ -100,7 +102,7 @@ mutation {
   }
 }
 
- Error Handling
+ ## Error Handling
 ResourceNotFoundException → when an entity is missing
 
 PostNotFoundException → specific to posts
