@@ -1,4 +1,4 @@
-package graphqlcontroller;
+package com.example.Blogging_platform2.graphqlcontroller;
 
 import com.example.Blogging_platform2.model.Review;
 import com.example.Blogging_platform2.service.ReviewService;
@@ -11,7 +11,7 @@ import java.util.List;
 
 @Controller
 public class ReviewGraphQLController {
-
+// DI
     private final ReviewService service;
 
     public ReviewGraphQLController(ReviewService service) {
