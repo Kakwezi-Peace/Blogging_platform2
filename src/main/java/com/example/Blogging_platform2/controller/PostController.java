@@ -22,6 +22,7 @@ import java.util.stream.Collectors;
 @Tag(name = "Post Management", description = "APIs for managing blog posts (create, read, update, delete, search)")
 public class PostController {
 
+
     private final PostService postService;
     private final PostRepository postRepository;
 
