@@ -31,6 +31,7 @@ public class PostService {
         return post;
     }
 
+
     @Transactional
     public Post createPost(Post post, int userId) {
         System.out.println("Post:   -------------------"+post);
