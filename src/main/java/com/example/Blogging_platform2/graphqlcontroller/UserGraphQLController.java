@@ -1,4 +1,4 @@
-package graphqlcontroller;
+package com.example.Blogging_platform2.graphqlcontroller;
 
 import com.example.Blogging_platform2.model.User;
 import com.example.Blogging_platform2.service.UserService;
