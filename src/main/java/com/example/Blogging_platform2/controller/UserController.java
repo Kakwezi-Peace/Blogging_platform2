@@ -25,8 +25,8 @@ import java.util.stream.Collectors;
 @Tag(name = "User Management", description = "APIs for managing users (registration, retrieval, updates, deletion)")
 public class UserController {
 
-    // Inject the UserService to handle business logic
-    // BEGINNER NOTE: Constructor injection is the recommended way
+
+
     private final UserService userService;
 
     public UserController(UserService userService) {
