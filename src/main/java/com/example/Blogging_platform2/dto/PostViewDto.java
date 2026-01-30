@@ -13,7 +13,6 @@ import java.time.LocalDateTime;
 public class PostViewDto {
 
     private Integer id;
-
     @NotNull(message = "Post ID is required")
     private Integer postId;
 
