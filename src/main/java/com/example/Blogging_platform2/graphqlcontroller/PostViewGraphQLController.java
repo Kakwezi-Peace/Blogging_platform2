@@ -1,4 +1,4 @@
-package graphqlcontroller;
+package com.example.Blogging_platform2.graphqlcontroller;
 
 import com.example.Blogging_platform2.model.PostView;
 import com.example.Blogging_platform2.service.PostViewService;
@@ -27,6 +27,7 @@ public class PostViewGraphQLController {
     public PostView getView(@Argument int id) {
         return service.getView(id);
     }
+// methods
 
     @MutationMapping
     public PostView createView(@Argument int postId, @Argument Integer userId) {
@@ -35,7 +36,7 @@ public class PostViewGraphQLController {
         view.setUserId(userId);
         return service.createView(view);
     }
-
+ // mutation
     @MutationMapping
     public boolean deleteView(@Argument int id) {
         return service.deleteView(id);
