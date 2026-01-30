@@ -15,7 +15,8 @@ Search posts by title or content
 GraphQL queries/mutations for flexible data access
 
 ## Tech Stack
-Java 21
+
+ GraphQL queries/mutations for flexible data access
 
 Spring Boot
 
@@ -38,7 +39,11 @@ Blogging_platform2/
 │       │           └── Blogging_platform2/
 │       │               ├── aspect/
 │       │               ├── config/
+
 │       │               │
+
+│       │               │ 
+
 │       │               │  
 │       │               │
 │       │               ├── controller/
@@ -81,9 +86,10 @@ Search: Simple text search on title/content
 
 GraphQL Schema: Queries and mutations for all entities
 
-
 ## Running the Project
-Clone the repository:
+
+ ## Running the Project
+
 
 bash
 git clone https://github.com/your-username/blogging-platform.git
@@ -107,6 +113,7 @@ Swagger UI → http://localhost:8080/swagger-ui.html
 GraphQL → http://localhost:8080/graphql
 
 
+
 ## Example GraphQL Queries/Mutations
 Get Post by ID
 graphql
@@ -117,10 +124,23 @@ title
 content
 createdAt
 }
+
+ ## Example GraphQL Queries/Mutations
+Get Post by ID
+graphql
+query {
+  getPost(id: 1) {
+    id
+    title
+    content
+    createdAt
+  }
+
 }
 Create Comment
 graphql
 mutation {
+
 createComment(request: { postId: 1, userId: 2, content: "Nice post!" }) {
 commentId
 content
@@ -129,7 +149,16 @@ createdAt
 }
 
 ## Error Handling
-ResourceNotFoundException → when an entity is missing
+
+  createComment(request: { postId: 1, userId: 2, content: "Nice post!" }) {
+    commentId
+    content
+    createdAt
+  }
+}
+
+ ## Error Handling
+
 
 PostNotFoundException → specific to posts
 
@@ -175,8 +204,10 @@ java
 @Configuration
 @Profile("dev")
 public class DevConfig {
-// Dev-specific beans
-}
+
+
+##  Dev-specific beans
+
 
 ## Activating Profiles
 Profiles can be activated via:
