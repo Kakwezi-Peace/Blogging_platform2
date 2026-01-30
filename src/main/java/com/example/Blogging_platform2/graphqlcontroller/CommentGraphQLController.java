@@ -1,4 +1,4 @@
-package graphqlcontroller;
+package com.example.Blogging_platform2.graphqlcontroller;
 
 import com.example.Blogging_platform2.model.Comment;
 import com.example.Blogging_platform2.service.CommentService;
@@ -17,6 +17,7 @@ public class CommentGraphQLController {
     public CommentGraphQLController(CommentService service) {
         this.service = service;
     }
+// methods
 
     @QueryMapping
     public List<Comment> getCommentsByPost(@Argument int postId) {
