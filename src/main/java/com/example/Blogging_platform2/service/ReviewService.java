@@ -17,6 +17,7 @@ public class ReviewService {
         this.repo = repo;
     }
 
+
     public List<Review> getReviewsByPost(int postId) {
         return repo.findAllByPostId(postId);
     }
