@@ -29,6 +29,7 @@ public class PostRepository {
         return jdbc.query(sql, new BeanPropertyRowMapper<>(Post.class), size, offset);
     }
 
+
     public Post findById(int id) {
         List<Post> posts = jdbc.query("SELECT * FROM posts WHERE id = ?",
                 new BeanPropertyRowMapper<>(Post.class), id);
