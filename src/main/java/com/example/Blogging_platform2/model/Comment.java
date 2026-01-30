@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Comment {
+    // fields
     private int commentId;
     private int postId;
     private int userId;
