@@ -1,0 +1,28 @@
+
+extend type Query {
+    allPosts: [Post]
+    postById(id: Int!): Post
+}
+
+extend type Mutation {
+    createPost(input:CreatePostRequest!): Post
+}
+
+input CreatePostRequest{
+    userId: Int!
+    title:String
+    content: String
+}
+
+
+type Post {
+    id: Int
+    userId: Int
+    title: String
+    content: String
+    createdAt: String
+    updatedAt: String
+#    authorName: String
+}
+
+

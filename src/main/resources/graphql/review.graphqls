@@ -1,0 +1,20 @@
+type Review {
+    reviewId: ID
+    postId: Int
+    userId: Int
+    rating: Int
+    comment: String
+    createdAt: String
+    postTitle: String
+    username: String
+}
+
+extend type Query {
+    getReviewsByPost(postId: Int!): [Review]
+    getReview(reviewId: ID!): Review
+}
+
+extend type Mutation {
+    createReview(postId: Int!, userId: Int!, rating: Int!, comment: String!): Review
+    deleteReview(reviewId: ID!): Boolean
+}
