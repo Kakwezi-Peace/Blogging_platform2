@@ -27,16 +27,42 @@ Maven for dependency management
 
 Swagger/OpenAPI for API documentation
 
-## Project Structure
-Code
-src/main/java/com/example/Blogging_platform2/
-│
-├── controller/        # REST + GraphQL controllers
-├── dto/               # Data Transfer Objects (DTOs)
-├── exception/         # Custom exceptions
-├── model/             # Entity models (Post, Comment, Review, Tag, PostView, ActivityLog)
-├── repository/        # JDBC repositories
-└── service/           # Business logic services
+### Project Structure
+
+Blogging_platform2/
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com/
+│       │       └── example/
+│       │           └── Blogging_platform2/
+│       │               ├── aspect/
+│       │               ├── config/
+│       │               │ 
+│       │               │  
+│       │               │
+│       │               ├── controller/
+│       │               ├── graphqlcontroller/
+│       │               ├── dto/
+│       │               ├── exception/
+│       │               ├── model/
+│       │               ├── repository/
+│       │               ├── service/
+│       │               ├── util/
+│       │               ├── validation/
+│       │               └── BloggingPlatform2Application.java
+│       └── resources/
+│           ├── graphql/
+│           ├── static/
+│           ├── templates/
+│           ├── application.properties
+│           ├── application-dev.properties
+│           ├── application-prod.properties
+│           ├── application-test.properties
+│           └── schema.sql
+├── pom.xml
+└── README.md
+
 
 ## Key Features
 Posts: CRUD operations with ownership checks
@@ -108,3 +134,55 @@ ResourceNotFoundException → when an entity is missing
 PostNotFoundException → specific to posts
 
 Validation errors (e.g., rating must be between 1–5)
+
+### Spring Profiles Overview
+This project uses Spring Profiles to manage environment-specific configurations. Profiles are defined in separate property files and activated via the spring.profiles.active setting.
+
+## Default Configuration (application.properties)
+properties
+spring.profiles.active=dev
+spring.application.name=BloggingPlatform2
+
+## Development Profile (application-dev.properties)
+properties
+server.port=8080
+spring.datasource.url=jdbc:postgresql://localhost:5432/blog_dev
+spring.datasource.username=dev_user
+spring.datasource.password=dev_pass
+logging.level.org.springframework=DEBUG
+
+## Production Profile (application-prod.properties)
+properties
+server.port=8081
+spring.datasource.url=jdbc:postgresql://prod-db:5432/blog_prod
+spring.datasource.username=prod_user
+spring.datasource.password=prod_pass
+logging.level.org.springframework=ERROR
+
+## Test Profile (application-test.properties)
+properties
+server.port=8082
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.hibernate.ddl-auto=create-drop
+
+## Profile-Specific Beans
+Beans can be conditionally loaded using @Profile:
+
+java
+@Configuration
+@Profile("dev")
+public class DevConfig {
+    // Dev-specific beans
+}
+
+## Activating Profiles
+Profiles can be activated via:
+
+Command line: --spring.profiles.active=prod
+
+Environment variable: SPRING_PROFILES_ACTIVE=prod
+
+IDE VM options: -Dspring.profiles.active=prod
