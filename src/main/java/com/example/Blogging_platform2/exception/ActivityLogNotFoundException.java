@@ -5,3 +5,4 @@ public class ActivityLogNotFoundException extends RuntimeException {
         super("ActivityLog with ID " + id + " not found");
     }
 }
+//
