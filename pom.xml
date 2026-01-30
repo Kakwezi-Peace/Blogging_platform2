@@ -18,7 +18,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>Blogging_platform2</name>
     <description>Blogging Platform with REST + GraphQL</description>
-
+//
     <properties>
         <java.version>21</java.version>
     </properties>
